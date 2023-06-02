@@ -33,3 +33,34 @@
     font-size: larger;
     color: orangered;
 }
+
+
+@media (max-width: 500px) {
+
+
+    .card{
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        margin: auto;
+        margin-top: 2em;
+    }
+
+
+  }
+
+
+  @media (min-width: 500px) and (max-width: 960px) {
+
+
+    .card{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        width: 90%;
+        margin: auto;
+        margin-top: 2em;
+        gap: 15px;
+    }
+
+
+  }

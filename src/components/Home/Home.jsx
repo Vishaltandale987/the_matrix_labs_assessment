@@ -174,6 +174,7 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
   const adddata = () => {
   
       dispatch(handleSearch(search_q));
+      setsearch_q("")
   }
     // console.log("search_q",search_q)
   return (

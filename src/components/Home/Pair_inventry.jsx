@@ -1,9 +1,10 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import "./home.css";
+import { useSelector } from 'react-redux';
 function Pair_inventry() {
   const [data, setdata] = useState();
-
+  // const { data } = useSelector((store) => store.SearchMangerdata);
   const handle_getdata = async () => {
     try {
       let res = await axios("https://api.dexscreener.com/latest/dex/tokens/0x2170Ed0880ac9A755fd29B2688956BD959F933F8,0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c");
@@ -22,7 +23,7 @@ function Pair_inventry() {
     <div id='parent_box'>
 
       {
-        data?.slice(0,2).map((el,index) =>{
+        data?.slice(0,6).map((el,index) =>{
           return <div key={index} className='card'>
               <div className='child-card'>
               <h1 className='title' > <b>  Basic Info </b> </h1>

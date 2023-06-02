@@ -5,7 +5,11 @@ import { useSelector } from 'react-redux';
 function Token_inventry() {
   const [tokendata, settokendata] = useState();
   const { data } = useSelector((store) => store.SearchMangerdata);
-console.log("data",data)
+
+
+    let soert=data.sort((a,b) =>  parseFloat(b.priceUsd) - parseFloat(a.priceUsd)  )
+
+    console.log("soert",soert)
   const handle_getdata = async () => {
     try {
       let res = await axios("https://api.dexscreener.com/latest/dex/tokens/0x2170Ed0880ac9A755fd29B2688956BD959F933F8,0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c");
@@ -22,6 +26,11 @@ console.log("data",data)
 
   return (
     <div>
+
+      { data.length === 0 ? 
+      
+    
+   
 
     <div id='parent_box'>
 
@@ -68,14 +77,14 @@ console.log("data",data)
 
 
   
-    </div>
+    </div> :
 
 
 
     <div id='parent_box'>
 
 {
-  data?.slice(0,5).map((el,index) =>{
+  soert?.slice(0,5).map((el,index) =>{
     return <div key={index} className='card'>
         <div className='child-card'>
         <h1 className='title' > <b>  Basic Info </b> </h1>
@@ -118,6 +127,8 @@ console.log("data",data)
 
 
 </div>
+
+}
     </div>
 
   )
