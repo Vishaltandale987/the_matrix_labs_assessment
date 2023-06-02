@@ -17,7 +17,7 @@ function Pair_inventry() {
 
   useEffect(() => {
     handle_getdata();
-  }, []);
+  }, [data]);
 
   return (
     <div id='parent_box'>

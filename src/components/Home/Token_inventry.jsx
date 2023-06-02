@@ -22,7 +22,7 @@ function Token_inventry() {
 
   useEffect(() => {
     handle_getdata();
-  }, []);
+  }, [data,tokendata]);
 
   return (
     <div>
