@@ -1,0 +1,35 @@
+.inventry_box{
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    gap:30px;
+    
+}
+
+
+#parent_box{
+    display:flex;
+    flex-direction: column;
+    
+}
+
+.card{
+    display:flex;  
+    justify-content: space-between;
+    width: 90%;
+    margin: auto;
+    margin-top: 2em;
+}
+
+.child-card{
+    background-color: rgb(184, 225, 234);
+    text-align: left;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    width: 15em;
+    padding: 1em;
+
+}
+
+.title{
+    font-size: larger;
+    color: orangered;
+}
