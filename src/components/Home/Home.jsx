@@ -43,6 +43,8 @@ import axios from "axios";
 import All_Routes from "../../Routes/All_Routes";
 import { NavLink } from "react-router-dom";
 import Pair_inventry from "./Pair_inventry";
+import { useDispatch, useSelector } from "react-redux";
+import { handleSearch } from "../../Redux/action.search";
 
 interface LinkItemProps {
   name: string;
@@ -56,7 +58,7 @@ const LinkItems: Array<LinkItemProps> = [
 
 export default function Home({ children }: { children: ReactNode }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
-
+ 
   
   return (
     <Box minH="100vh" bg={useColorModeValue("gray.100", "gray.900")}>
@@ -81,7 +83,7 @@ export default function Home({ children }: { children: ReactNode }) {
       <MobileNav onOpen={onOpen} />
       <Box ml={{ base: 0, md: 60 }} p="4">
         {children}
-
+          
         <All_Routes />
       </Box>
     </Box>
@@ -164,6 +166,16 @@ interface MobileProps extends FlexProps {
   onOpen: () => void;
 }
 const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
+    const [search_q, setsearch_q] = useState("")
+    const { data } = useSelector((store) => store.SearchMangerdata);
+    console.log("data",data)
+    const dispatch = useDispatch();
+ 
+  const adddata = () => {
+  
+      dispatch(handleSearch(search_q));
+  }
+    // console.log("search_q",search_q)
   return (
     <Flex
       ml={{ base: 0, md: 60 }}
@@ -195,13 +207,14 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
 
 <div >
 
-      <Input w="100" mr="2" border="black" variant='outline' placeholder='Search' style={{border:'1px solid black'}}/>
+      <Input w="100" mr="2" border="black" variant='outline' placeholder='Search' style={{border:'1px solid black'}}  onChange={(e)=> setsearch_q(e.target.value)}/>
       <IconButton
           variant="outline"
           colorScheme="black"
           aria-label="Call Sage"
           fontSize="20px"
           icon={<SearchIcon  />}
+          onClick={adddata}
         />
 </div>
 

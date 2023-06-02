@@ -1,14 +1,16 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import "./home.css";
+import { useSelector } from 'react-redux';
 function Token_inventry() {
-  const [data, setdata] = useState();
-
+  const [tokendata, settokendata] = useState();
+  const { data } = useSelector((store) => store.SearchMangerdata);
+console.log("data",data)
   const handle_getdata = async () => {
     try {
       let res = await axios("https://api.dexscreener.com/latest/dex/tokens/0x2170Ed0880ac9A755fd29B2688956BD959F933F8,0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c");
 
-      setdata(res.data.pairs);
+      settokendata(res.data.pairs);
     } catch (error) {
       console.log(error);
     }
@@ -19,10 +21,12 @@ function Token_inventry() {
   }, []);
 
   return (
+    <div>
+
     <div id='parent_box'>
 
       {
-        data?.slice(0,3).map((el,index) =>{
+        tokendata?.slice(0,3).map((el,index) =>{
           return <div key={index} className='card'>
               <div className='child-card'>
               <h1 className='title' > <b>  Basic Info </b> </h1>
@@ -65,6 +69,57 @@ function Token_inventry() {
 
   
     </div>
+
+
+
+    <div id='parent_box'>
+
+{
+  data?.slice(0,5).map((el,index) =>{
+    return <div key={index} className='card'>
+        <div className='child-card'>
+        <h1 className='title' > <b>  Basic Info </b> </h1>
+
+          <p> <b>Pair created at</b> {el.baseToken.name}</p>
+          <p> <b>Symbol</b> {el.baseToken.symbol}</p>
+          <p> <b>DEX ID</b> #{el.dexId}</p>
+          <p> <b>Address</b> #{el.pairAddress.substring(0,4)}</p>
+        </div>
+
+        <div className='child-card'>
+          <h1 className='title' > <b>  Basic Token </b> </h1>
+          <p> <b>Name</b> {el.baseToken.name}</p>
+          <p> <b>Symbol</b> {el.baseToken.symbol}</p>
+          <p> <b>Address</b> #{el.baseToken.address.substring(0,4)}</p>
+
+        </div>
+
+        <div className='child-card'>
+          <h1 className='title' > <b>  Quote Token </b> </h1>
+          <p> <b>Name</b> {el.quoteToken.name}</p>
+          <p> <b>Symbol</b> {el.quoteToken.symbol}</p>
+          <p> <b>Address</b> #{el.quoteToken.address.substring(0,4)}</p>
+
+        </div>
+
+        <div className='child-card'>
+        <h1 className='title' > <b>Price</b> </h1>
+        <p> <b>Price Native</b> {el.priceNative}</p>
+        <p> <b>Price USD</b> {el.priceUsd}</p>
+
+        </div>
+
+
+    </div>
+  })
+}
+
+
+
+
+</div>
+    </div>
+
   )
 }
 
