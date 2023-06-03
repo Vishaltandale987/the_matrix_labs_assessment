@@ -1,4 +1,14 @@
-# the_matrix_labs_assessment
+# MATRIX LABS
+It is an Individual Project.
+## Duration: 48 hour
+## Tech Stacks:
+
+HTML
+CSS
+Chakra UI 
+JavaScript
+React JS
+Redux
 
 
 ### Token Address
