@@ -12,7 +12,7 @@ function All_Routes() {
       <Routes>
       {/* <Route path="/" element={<Home />}></Route> */}
       <Route path="/pair" element={<Pair_inventry />}></Route>
-      <Route path="/token" element={<Token_inventry />}></Route>
+      <Route path="/" element={<Token_inventry />}></Route>
 
       </Routes>
     </div>

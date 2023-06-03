@@ -34,6 +34,9 @@ function Token_inventry() {
 
     <div id='parent_box'>
 
+<h1 className='heading'> <b>Token </b> </h1>
+
+
       {
         tokendata?.slice(0,3).map((el,index) =>{
           return <div key={index} className='card'>
@@ -82,9 +85,10 @@ function Token_inventry() {
 
 
     <div id='parent_box'>
+<h1 className='heading'> <b>Token Search Results </b> </h1>
 
 {
-  soert?.slice(0,5).map((el,index) =>{
+  soert?.slice(0,8).map((el,index) =>{
     return <div key={index} className='card'>
         <div className='child-card'>
         <h1 className='title' > <b>  Basic Info </b> </h1>

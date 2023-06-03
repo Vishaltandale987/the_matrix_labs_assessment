@@ -1,8 +1,25 @@
 # the_matrix_labs_assessment
 
 
+### Token Address
+This is the Token Section where you can see all token related data.
 
-Search : https://api.dexscreener.com/latest/dex/search/?q=<ANY SEARCH VALUE>
+![Token](https://res.cloudinary.com/dd9cmhunr/image/upload/v1685788367/Screenshot_571_onsptg.png)
+
+This is the Token Search Results data render in descending order of price in USD.
+
+![Token](https://res.cloudinary.com/dd9cmhunr/image/upload/v1685788603/Screenshot_574_yijti4.png)
+
+### Pair Address
+This is the Pair Section.
+
+![Token](https://res.cloudinary.com/dd9cmhunr/image/upload/v1685788347/Screenshot_570_ooegay.png)
+
+This is the Pair Search Results data render in descending order of price in USD.
+
+![Token](https://res.cloudinary.com/dd9cmhunr/image/upload/v1685788614/Screenshot_575_yv7lmb.png)
 
 
-Pair : https://api.dexscreener.com/latest/dex/pairs/bsc/0x16b9a82891338f9bA80E2D6970FddA79D1eb0daE
+
+
+### Deploy link -> https://the-matrix-labs-assessment.vercel.app/

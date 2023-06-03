@@ -52,7 +52,7 @@ interface LinkItemProps {
 }
 
 const LinkItems: Array<LinkItemProps> = [
-    { name: "Token Address", icon: FiHome, url: "token" },
+    { name: "Token Address", icon: FiHome, url: "" },
   { name: "Pair Address", icon: FiTrendingUp, url: "pair" },
 ];
 
@@ -108,7 +108,7 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
     >
       <Flex h="20" alignItems="center" mx="8" justifyContent="space-between">
         <Text fontSize="2xl" fontFamily="monospace" fontWeight="bold">
-          Logo
+        MATRIX LABS
         </Text>
         <CloseButton display={{ base: "flex", md: "none" }} onClick={onClose} />
       </Flex>
@@ -203,12 +203,15 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
         fontFamily="monospace"
         fontWeight="bold"
       >
-        Logo
+       MATRIX LABS
       </Text>
 
 <div >
 
-      <Input w="100" mr="2" border="black" variant='outline' placeholder='Search' style={{border:'1px solid black'}}  onChange={(e)=> setsearch_q(e.target.value)}/>
+      <Input w="100" mr="2" border="black" variant='outline' placeholder='Search' style={{border:'1px solid black'}} className="searchtag"  onChange={(e)=> setsearch_q(e.target.value)}/>
+
+
+
       <IconButton
           variant="outline"
           colorScheme="black"

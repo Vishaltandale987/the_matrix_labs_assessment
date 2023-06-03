@@ -34,6 +34,14 @@
     color: orangered;
 }
 
+.heading{
+    font-size: xx-large;
+    text-align: left;
+}
+
+.searchtag{
+    border: 1px solid black;
+}
 
 @media (max-width: 500px) {
 
