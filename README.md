@@ -3,11 +3,11 @@ It is an Individual Project.
 ## Duration: 48 hour
 ## Tech Stacks:
 
-HTML
-CSS
-Chakra UI 
-JavaScript
-React JS
+HTML,
+CSS,
+Chakra UI ,
+JavaScript,
+React JS,
 Redux
 
 
