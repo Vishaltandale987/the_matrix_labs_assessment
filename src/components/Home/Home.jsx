@@ -98,7 +98,7 @@ export default function Home({ children }: { children: ReactNode }) {
           <SidebarContent onClose={onClose} />
         </DrawerContent>
       </Drawer>
- 
+
       <MobileNav onOpen={onOpen} />
       <Box ml={{ base: 0, md: 60 }} p="4">
         {children}
@@ -125,7 +125,6 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
       h="full"
       {...rest}
       backgroundColor={"rgb(59, 58, 59)"}
-      
     >
       <Flex h="20" alignItems="center" mx="8" justifyContent="space-between">
         <Text fontSize="2xl" fontFamily="monospace" fontWeight="bold">
@@ -235,9 +234,6 @@ const NavItem = ({ icon, children, ...rest }: NavItemProps) => {
   );
 };
 
-
-
-
 interface MobileProps extends FlexProps {
   onOpen: () => void;
 }
@@ -264,7 +260,6 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
       justifyContent={{ base: "space-between", md: "flex-end" }}
       {...rest}
       backgroundColor={"black"}
-   
       id="mainbox"
     >
       <IconButton
@@ -273,6 +268,7 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
         variant="outline"
         aria-label="open menu"
         icon={<FiMenu />}
+        color="white"
       />
 
       <div
@@ -310,27 +306,30 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
           </div>
         </Text>
         <div>
+
           <InputGroup className="searchtags">
             <Input
-              style={{ border: "1px solid white", width: "350px" }}
+              style={{ border: "1px solid white", width: "10em" }}
               placeholder="Search"
               fontWeight={"bold"}
               onChange={(e) => setsearch_q(e.target.value)}
               color="white"
+              className="searchtags"
             />
-            <InputRightElement>
-              <Search2Icon color="white" onClick={adddata} />
+            <InputRightElement 
+              className="searchtags">
+              <Search2Icon color="white" onClick={adddata} 
+              className="searchtags" />
             </InputRightElement>
           </InputGroup>
+
         </div>
         <div>
           {/* <Button className="connectbutton">Connect</Button> */}
 
-<ConnectButton />
-
+          <ConnectButton />
         </div>
       </div>
-
     </Flex>
   );
 };

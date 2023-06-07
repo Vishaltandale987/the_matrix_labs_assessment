@@ -12,7 +12,7 @@ function Pair_inventry() {
     // console.log("soert",soert)
   const handle_getdata = async () => {
     try {
-      let res = await axios("https://api.dexscreener.com/latest/dex/tokens/0x2170Ed0880ac9A755fd29B2688956BD959F933F8,0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c");
+      let res = await axios("https://api.dexscreener.com/latest/dex/pairs/bsc/0x7213a321F1855CF1779f42c0CD85d3D95291D34C,0x16b9a82891338f9ba80e2d6970fdda79d1eb0dae");
 
       settokendata(res.data.pairs);
     } catch (error) {
@@ -45,15 +45,15 @@ function Pair_inventry() {
 
                 <p> <b>Pair created at</b> {el.baseToken.name}</p>
                 <p> <b>Symbol</b> {el.baseToken.symbol}</p>
-                <p> <b>DEX ID</b> #{el.dexId}</p>
-                <p> <b>Address</b> #{el.pairAddress.substring(0,4)}</p>
+                <p> <b>DEX ID</b> {el.dexId}</p>
+                <p> <b>Address</b> {el.pairAddress}</p>
               </div>
 
               <div className='child-card'>
                 <h1 className='title' > <b>  Basic Token </b> </h1>
                 <p> <b>Name</b> {el.baseToken.name}</p>
                 <p> <b>Symbol</b> {el.baseToken.symbol}</p>
-                <p> <b>Address</b> #{el.baseToken.address.substring(0,4)}</p>
+                <p> <b>Address</b> {el.baseToken.address}</p>
 
               </div>
 
@@ -61,7 +61,7 @@ function Pair_inventry() {
                 <h1 className='title' > <b>  Quote Token </b> </h1>
                 <p> <b>Name</b> {el.quoteToken.name}</p>
                 <p> <b>Symbol</b> {el.quoteToken.symbol}</p>
-                <p> <b>Address</b> #{el.quoteToken.address.substring(0,4)}</p>
+                <p> <b>Address</b> {el.quoteToken.address}</p>
 
               </div>
 
@@ -95,15 +95,15 @@ function Pair_inventry() {
 
           <p> <b>Pair created at</b> {el.baseToken.name}</p>
           <p> <b>Symbol</b> {el.baseToken.symbol}</p>
-          <p> <b>DEX ID</b> #{el.dexId}</p>
-          <p> <b>Address</b> #{el.pairAddress.substring(0,4)}</p>
+          <p> <b>DEX ID</b> {el.dexId}</p>
+          <p> <b>Address</b> {el.pairAddress}</p>
         </div>
 
         <div className='child-card'>
           <h1 className='title' > <b>  Basic Token </b> </h1>
           <p> <b>Name</b> {el.baseToken.name}</p>
           <p> <b>Symbol</b> {el.baseToken.symbol}</p>
-          <p> <b>Address</b> #{el.baseToken.address.substring(0,4)}</p>
+          <p> <b>Address</b> {el.baseToken.address}</p>
 
         </div>
 
@@ -111,7 +111,7 @@ function Pair_inventry() {
           <h1 className='title' > <b>  Quote Token </b> </h1>
           <p> <b>Name</b> {el.quoteToken.name}</p>
           <p> <b>Symbol</b> {el.quoteToken.symbol}</p>
-          <p> <b>Address</b> #{el.quoteToken.address.substring(0,4)}</p>
+          <p> <b>Address</b> {el.quoteToken.address}</p>
 
         </div>
 

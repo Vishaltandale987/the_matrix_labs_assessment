@@ -48,6 +48,7 @@
 }
 
 .searchtag {
+    display: block;
   border: 1px solid black;
 }
 
@@ -61,10 +62,13 @@
   }
 
   .searchtags {
-    visibility: hidden;
+    /* visibility: hidden; */
+    display: none;
   }
   .connectbutton {
     visibility: hidden;
+    /* display: none; */
+
   }
 }
 

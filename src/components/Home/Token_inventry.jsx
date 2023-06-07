@@ -45,15 +45,15 @@ function Token_inventry() {
 
                 <p> <b>Pair created at</b> <span > {el.baseToken.name} </span>  </p>
                 <p> <b>Symbol</b> {el.baseToken.symbol}</p>
-                <p> <b>DEX ID</b> #{el.dexId}</p>
-                <p> <b>Address</b> #{el.pairAddress.substring(0,4)}</p>
+                <p> <b>DEX ID</b> {el.dexId}</p>
+                <p> <b>Address</b> {el.pairAddress}</p>
               </div>
 
               <div className='child-card'>
                 <h1 className='title' > <b>  Basic Token </b> </h1>
                 <p> <b>Name</b> {el.baseToken.name}</p>
                 <p> <b>Symbol</b> {el.baseToken.symbol}</p>
-                <p> <b>Address</b> #{el.baseToken.address.substring(0,4)}</p>
+                <p> <b>Address</b> {el.baseToken.address}</p>
 
               </div>
 
@@ -61,7 +61,7 @@ function Token_inventry() {
                 <h1 className='title' > <b>  Quote Token </b> </h1>
                 <p> <b>Name</b> {el.quoteToken.name}</p>
                 <p> <b>Symbol</b> {el.quoteToken.symbol}</p>
-                <p> <b>Address</b> #{el.quoteToken.address.substring(0,4)}</p>
+                <p> <b>Address</b> {el.quoteToken.address}</p>
 
               </div>
 
@@ -96,14 +96,14 @@ function Token_inventry() {
           <p> <b>Pair created at</b> {el.baseToken.name}</p>
           <p> <b>Symbol</b> {el.baseToken.symbol}</p>
           <p> <b>DEX ID</b> #{el.dexId}</p>
-          <p> <b>Address</b> #{el.pairAddress.substring(0,4)}</p>
+          <p> <b>Address</b> #{el.pairAddress}</p>
         </div>
 
         <div className='child-card'>
           <h1 className='title' > <b>  Basic Token </b> </h1>
           <p> <b>Name</b> {el.baseToken.name}</p>
           <p> <b>Symbol</b> {el.baseToken.symbol}</p>
-          <p> <b>Address</b> #{el.baseToken.address.substring(0,4)}</p>
+          <p> <b>Address</b> #{el.baseToken.address}</p>
 
         </div>
 
@@ -111,7 +111,7 @@ function Token_inventry() {
           <h1 className='title' > <b>  Quote Token </b> </h1>
           <p> <b>Name</b> {el.quoteToken.name}</p>
           <p> <b>Symbol</b> {el.quoteToken.symbol}</p>
-          <p> <b>Address</b> #{el.quoteToken.address.substring(0,4)}</p>
+          <p> <b>Address</b> #{el.quoteToken.address}</p>
 
         </div>
 
