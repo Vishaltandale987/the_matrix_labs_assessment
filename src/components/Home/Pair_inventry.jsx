@@ -9,7 +9,7 @@ function Pair_inventry() {
 
     let soert=data.sort((a,b) =>  parseFloat(b.priceUsd) - parseFloat(a.priceUsd)  )
 
-    console.log("soert",soert)
+    // console.log("soert",soert)
   const handle_getdata = async () => {
     try {
       let res = await axios("https://api.dexscreener.com/latest/dex/tokens/0x2170Ed0880ac9A755fd29B2688956BD959F933F8,0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c");

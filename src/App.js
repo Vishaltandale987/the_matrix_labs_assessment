@@ -4,13 +4,14 @@ import './App.css';
 import Home from './components/Home/Home';
 import { Button } from '@chakra-ui/button';
 import All_Routes from './Routes/All_Routes';
+import Footer from './components/Home/Footer';
 
 function App() {
   return (
     <div className="App">
-
-    
+  
      <Home/>
+     <Footer/>
     </div>
   );
 }
