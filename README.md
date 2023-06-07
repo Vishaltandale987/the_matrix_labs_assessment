@@ -32,4 +32,4 @@ This is the Pair Search Results data render in descending order of price in USD.
 
 
 
-### Deploy link -> https://the-matrix-labs-assessment.vercel.app/
+### Deploy link -> https://6480a66c6367eb095b9129a5--coruscating-chimera-d8d2bc.netlify.app/
