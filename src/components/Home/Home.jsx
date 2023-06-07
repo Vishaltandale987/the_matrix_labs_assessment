@@ -6,7 +6,12 @@ import {
   SearchIcon,
 } from "@chakra-ui/icons";
 import "./home.css";
-import { AiFillSmile ,AiFillFacebook, AiFillLinkedin, AiFillTwitterCircle} from "react-icons/ai";
+import {
+  AiFillSmile,
+  AiFillFacebook,
+  AiFillLinkedin,
+  AiFillTwitterCircle,
+} from "react-icons/ai";
 import {
   IconButton,
   Avatar,
@@ -54,6 +59,7 @@ import { NavLink } from "react-router-dom";
 import Pair_inventry from "./Pair_inventry";
 import { useDispatch, useSelector } from "react-redux";
 import { handleSearch } from "../../Redux/action.search";
+import { ConnectButton } from "@rainbow-me/rainbowkit";
 
 interface LinkItemProps {
   name: string;
@@ -69,10 +75,11 @@ export default function Home({ children }: { children: ReactNode }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
-    <Box minH="100vh" bg={useColorModeValue("gray.100", "gray.900")} 
-    backgroundColor={'black'}
-    id="mainbox"
-   
+    <Box
+      minH="100vh"
+      bg={useColorModeValue("gray.100", "gray.900")}
+      backgroundColor={"black"}
+      id="mainbox"
     >
       <SidebarContent
         onClose={() => onClose}
@@ -86,13 +93,12 @@ export default function Home({ children }: { children: ReactNode }) {
         returnFocusOnClose={false}
         onOverlayClick={onClose}
         size="full"
-        
       >
         <DrawerContent>
           <SidebarContent onClose={onClose} />
         </DrawerContent>
       </Drawer>
-      {/* <mobilenav/> */}
+ 
       <MobileNav onOpen={onOpen} />
       <Box ml={{ base: 0, md: 60 }} p="4">
         {children}
@@ -108,7 +114,6 @@ interface SidebarProps extends BoxProps {
 }
 
 const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
-
   return (
     <Box
       transition="3s ease"
@@ -119,7 +124,8 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
       pos="fixed"
       h="full"
       {...rest}
-      backgroundColor={'rgb(59, 58, 59)'}
+      backgroundColor={"rgb(59, 58, 59)"}
+      
     >
       <Flex h="20" alignItems="center" mx="8" justifyContent="space-between">
         <Text fontSize="2xl" fontFamily="monospace" fontWeight="bold">
@@ -131,58 +137,60 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
             <AiFillSmile
               style={{
                 marginTop: "8px",
-                color:"white",
-                marginRight:"10px"
+                color: "white",
+                marginRight: "10px",
               }}
             />
-            <span     style={{
-               
-                color:"white"
-              }}>Nifty</span>
+            <span
+              style={{
+                color: "white",
+              }}
+            >
+              Nifty
+            </span>
           </div>
         </Text>
         <CloseButton display={{ base: "flex", md: "none" }} onClick={onClose} />
       </Flex>
 
-<div style={{
-  display: "flex",
-  flexDirection:"column",
-  justifyContent:"space-between",
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "space-between",
 
-  height:"85%"
-}}>
-
-  <div>
-
-
-      {LinkItems.map((link) => (
-        <NavLink to={`/${link.url}`} key={link.name}>
-          <NavItem  
-           _hover={{ bg: '#f30050' }}
-          // bg={!shouldSetBgColor ? '#F30050' : 'transparent'}
-           icon={link.icon} style={{color:"white"}} >{link.name}</NavItem>
-        </NavLink>
-      ))}
-      </div>
-
-      <div 
-     style={{
-      display: "flex",
-
-      justifyContent:"space-between",
-      width:"40%",
-      margin:"0px auto 30px auto"
-     }}
-    
+          height: "85%",
+        }}
       >
+        <div>
+          {LinkItems.map((link) => (
+            <NavLink to={`/${link.url}`} key={link.name}>
+              <NavItem
+                _hover={{ bg: "#f30050" }}
+                // bg={!shouldSetBgColor ? '#F30050' : 'transparent'}
+                icon={link.icon}
+                style={{ color: "white" }}
+              >
+                {link.name}
+              </NavItem>
+            </NavLink>
+          ))}
+        </div>
 
-      <AiFillFacebook  color={"white"}/>
-      <AiFillLinkedin color={"white"}/>
-      <AiFillTwitterCircle color={"white"}/>
+        <div
+          style={{
+            display: "flex",
+
+            justifyContent: "space-between",
+            width: "40%",
+            margin: "0px auto 30px auto",
+          }}
+        >
+          <AiFillFacebook color={"white"} />
+          <AiFillLinkedin color={"white"} />
+          <AiFillTwitterCircle color={"white"} />
+        </div>
       </div>
-
-      </div>
-
     </Box>
   );
 };
@@ -227,6 +235,9 @@ const NavItem = ({ icon, children, ...rest }: NavItemProps) => {
   );
 };
 
+
+
+
 interface MobileProps extends FlexProps {
   onOpen: () => void;
 }
@@ -250,12 +261,10 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
       bg={useColorModeValue("white", "gray.900")}
       borderBottomWidth="1px"
       borderBottomColor={useColorModeValue("gray.200", "gray.700")}
-      // justifyContent={{ base: "space-between", md: "flex-end" }}
+      justifyContent={{ base: "space-between", md: "flex-end" }}
       {...rest}
-      backgroundColor={'black'}
-      // style={{
-      //   display:"flex"
-      // }}
+      backgroundColor={"black"}
+   
       id="mainbox"
     >
       <IconButton
@@ -266,8 +275,6 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
         icon={<FiMenu />}
       />
 
-      
-
       <div
         style={{
           display: "flex",
@@ -275,33 +282,33 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
           width: "100%",
         }}
       >
-
-
-<Text
-        display={{ base: "flex", md: "none" }}
-        fontSize="2xl"
-        fontFamily="monospace"
-        fontWeight="bold"
-        
-      >
-        <div
-          style={{
-            display: "flex",
-          }}
+        <Text
+          display={{ base: "flex", md: "none" }}
+          fontSize="2xl"
+          fontFamily="monospace"
+          fontWeight="bold"
         >
-          <AiFillSmile
+          <div
             style={{
-              marginTop: "8px",
-              color:"white",
-              marginLeft:"5px"
+              display: "flex",
             }}
-          />
-          <span  style={{
-             
-              color:"white"
-            }}>Nifty</span>
-        </div>
-      </Text>
+          >
+            <AiFillSmile
+              style={{
+                marginTop: "8px",
+                color: "white",
+                marginLeft: "5px",
+              }}
+            />
+            <span
+              style={{
+                color: "white",
+              }}
+            >
+              Nifty
+            </span>
+          </div>
+        </Text>
         <div>
           <InputGroup className="searchtags">
             <Input
@@ -316,56 +323,14 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
             </InputRightElement>
           </InputGroup>
         </div>
-      <div>
+        <div>
+          {/* <Button className="connectbutton">Connect</Button> */}
 
-          <Button>Connect</Button>
-      </div>
+<ConnectButton />
+
+        </div>
       </div>
 
-      <HStack spacing={{ base: "0", md: "6" }}>
-        <Flex alignItems={"center"}>
-          <Menu>
-            {/* <MenuButton
-              py={2}
-              transition="all 0.3s"
-              _focus={{ boxShadow: "none" }}
-            >
-              <HStack>
-                <Avatar
-                  size={"sm"}
-                  src={
-                    "https://images.unsplash.com/photo-1619946794135-5bc917a27793?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=b616b2c5b373a80ffc9636ba24f7a4a9"
-                  }
-                />
-                <VStack
-                  display={{ base: "none", md: "flex" }}
-                  alignItems="flex-start"
-                  spacing="1px"
-                  ml="2"
-                >
-                  <Text fontSize="sm">Justina Clark</Text>
-                  <Text fontSize="xs" color="gray.600">
-                    Admin
-                  </Text>
-                </VStack>
-                <Box display={{ base: "none", md: "flex" }}>
-                  <FiChevronDown />
-                </Box>
-              </HStack>
-            </MenuButton>
-            <MenuList
-              bg={useColorModeValue("white", "gray.900")}
-              borderColor={useColorModeValue("gray.200", "gray.700")}
-            >
-              <MenuItem>Profile</MenuItem>
-              <MenuItem>Settings</MenuItem>
-              <MenuItem>Billing</MenuItem>
-              <MenuDivider />
-              <MenuItem>Sign out</MenuItem>
-            </MenuList> */}
-          </Menu>
-        </Flex>
-      </HStack>
     </Flex>
   );
 };

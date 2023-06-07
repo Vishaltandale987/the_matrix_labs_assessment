@@ -1,88 +1,78 @@
-.inventry_box{
-    display:grid;
-    grid-template-columns: repeat(3,1fr);
-    gap:30px;
-    
+.inventry_box {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
 }
 
-
-#parent_box{
-    display:flex;
-    flex-direction: column;
-    
+#parent_box {
+  display: flex;
+  flex-direction: column;
 }
 
-#mainbox{
-    background-image: url(https://wallpaperaccess.com/full/729475.jpg);
+#mainbox {
+  background-image: url(https://wallpaperaccess.com/full/729475.jpg);
 }
 
-.card{
-    display:flex;  
-    justify-content: space-between;
-    width: 90%;
-    margin: auto;
-    margin-top: 2em;
+.card {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin: auto;
+  margin-top: 2em;
 }
 
-.child-card{
-    background-color: rgb(67, 10, 117);
-    text-align: left;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    width: 15em;
-    padding: 1em;
-    border-radius: 15px;
+.child-card {
+  background-color: rgb(67, 10, 117);
+  text-align: left;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  width: 15em;
+  padding: 1em;
+  border-radius: 15px;
 }
 
-.child-card>p{
-    color: white;
+.child-card > p {
+  color: white;
 }
 
-
-.title{
-    font-size: larger;
-    color: rgb(255, 255, 255);
+.title {
+  font-size: larger;
+  color: rgb(255, 255, 255);
 }
 
-.heading{
-    font-size: xx-large;
-    text-align: left;
-    color: white;
+.heading {
+  font-size: xx-large;
+  text-align: left;
+  color: white;
 }
 
-.searchtag{
-    border: 1px solid black;
+.searchtag {
+  border: 1px solid black;
 }
 
 @media (max-width: 500px) {
-
-
-    .card{
-        display: flex;
-        flex-direction: column;
-        width: 90%;
-        margin: auto;
-        margin-top: 2em;
-    }
-
-    .searchtags{
-        visibility: hidden;
-        }
-
-
+  .card {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: auto;
+    margin-top: 2em;
   }
 
-
-  @media (min-width: 500px) and (max-width: 960px) {
-
-
-    .card{
-        display: grid;
-        grid-template-columns: repeat(2,1fr);
-        width: 90%;
-        margin: auto;
-        margin-top: 2em;
-        gap: 15px;
-    }
-
-
+  .searchtags {
+    visibility: hidden;
   }
+  .connectbutton {
+    visibility: hidden;
+  }
+}
+
+@media (min-width: 500px) and (max-width: 960px) {
+  .card {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 90%;
+    margin: auto;
+    margin-top: 2em;
+    gap: 15px;
+  }
+}
